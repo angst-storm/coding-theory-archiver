@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{{ url_for('index') }}" method="post">
+        <label>
+            Результат: <br><textarea name="text" required>{{ result.output_text }}</textarea>
+        </label>
+        <p>Количество байт входящего текста: {{ result.input_bytes_count }}</p>
+        <p>Количество байт результата: {{ result.output_bytes_count }}</p>
+        <br><button type="submit">Разархивировать при помощи алгоритма LZW</button>
+    </form>
+{% endblock %}
